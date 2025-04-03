@@ -25,8 +25,9 @@ if (!$connection) {
 if (isset($_POST['userRegistration'])) {
     // Debug: Show raw POST data
     echo "<pre>POST Data Received:\n";
-    print_r($_POST);
+    print_r($_POST['userRegistration']);
     echo "</pre>";
+    
 
     // Sanitize inputs
     $name = mysqli_real_escape_string($connection, $_POST['name']);
@@ -36,11 +37,12 @@ if (isset($_POST['userRegistration'])) {
     $role = mysqli_real_escape_string($connection, $_POST['role']);
 
     // Construct and debug query
-    $query = "INSERT INTO users (name, email, password, mobile, role) VALUES ('$name', '$email', '$password', '$mobile', '$role')";
+    $query = "INSERT INTO `users`(`name`, `email`, `password`, `mobile`, `role`) VALUES ('$name', '$email', '$password', '$mobile', '$role')";
     echo "<pre>Executing Query:\n$query</pre>";
 
     // Execute query with error checking
     $query_run = mysqli_query($connection, $query);
+    // echo $query_run;
     if ($query_run) {
         echo "<script>alert('User registered successfully.'); window.location.href = 'admin_dashboard.php';</script>";
     } else {
@@ -48,6 +50,10 @@ if (isset($_POST['userRegistration'])) {
         $error = mysqli_error($connection);
         echo "<p>Query Failed: $error</p>";
         echo "<script>alert('Error: $error'); window.location.href = 'register.php';</script>";
+    }
+
+    if (!$query_run) {
+        die("Error in SQL Query: " . mysqli_error($connection));
     }
 } else {
     echo "<p>No POST data received. Waiting for form submission...</p>"; // Debug
