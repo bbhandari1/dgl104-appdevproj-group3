@@ -98,7 +98,7 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
                 <tr><td style="text-align: center;"><a type="button" id="assigned_tasks">My Assigned Tasks</a></td></tr>
                 <tr><td style="text-align: center;"><a type="button" id="apply_leave">Apply Leave</a></td></tr>
                 <tr><td style="text-align: center;"><a type="button" id="view_leave">Leave Status</a></td></tr>
-                <tr><td style="text-align: center;"><a type="button" href="../logout.php">Logout</a></td></tr>
+                <tr><td style="text-align: center;"><a type="button" href="logout.php">Logout</a></td></tr>
             </table>
         </div>
         
