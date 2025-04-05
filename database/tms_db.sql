@@ -3,14 +3,13 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 29, 2022 at 03:21 PM
+-- Generation Time: Apr 01, 2025 at 12:00 PM (Updated for current context)
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
-
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -100,16 +99,17 @@ CREATE TABLE `users` (
   `name` varchar(100) NOT NULL,
   `email` varchar(100) NOT NULL,
   `password` varchar(100) NOT NULL,
-  `mobile` bigint(20) NOT NULL
+  `mobile` bigint(20) NOT NULL,
+  `role` varchar(20) NOT NULL DEFAULT 'user'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`uid`, `name`, `email`, `password`, `mobile`) VALUES
-(1, 'Test', 'test@gmail.com', 'test@123', 9999999999),
-(2, 'Ashok Kumar', 'ashok@gmail.com', 'ashok@123', 7777777777);
+INSERT INTO `users` (`uid`, `name`, `email`, `password`, `mobile`, `role`) VALUES
+(1, 'Test', 'test@gmail.com', 'test@123', 9999999999, 'teamlead'),
+(2, 'Ashok Kumar', 'ashok@gmail.com', 'ashok@123', 7777777777, 'user');
 
 --
 -- Indexes for dumped tables
@@ -166,20 +166,9 @@ ALTER TABLE `tasks`
 --
 ALTER TABLE `users`
   MODIFY `uid` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
-
-
-CREATE TABLE tasks (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(255),
-    description TEXT,
-    user_id INT,
-    deadline DATE,
-    created_by INT, -- refers to team lead
-    status VARCHAR(50)
-);
-
