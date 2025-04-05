@@ -1,123 +1,72 @@
-/* Global styles */
-body {
+body{
     background-color: #355764;
-    padding: 0;
-    margin: 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #fff;
+    padding: 0px;
+    margin: 0px;
 }
-
-/* Header */
-#header {
-    background-color: #D4F6CC;
-    height: 8vh;
-    width: 100%;
-    padding: 10px 50px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: #355764;
-}
-
-/* Home Sections */
-#home_page, #login_home_page, #register_home_page {
-    margin: 0 auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    position: relative;
-}
-
-/* Individual background colors */
-#home_page {
+#home_page{
     background-color: #D4F6CC;
     top: 25vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
     height: 25vh;
     width: 50vw;
 }
-
-#login_home_page {
+#login_home_page{
     background-color: #81CACF;
     top: 25vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
     height: 30vh;
     width: 50vw;
 }
-
-#register_home_page {
+#register_home_page{
     background-color: #81CACF;
     top: 20vh;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 25px;
     height: 45vh;
     width: 50vw;
 }
-
-/* Sidebars */
-#left_sidebar {
+#header{
+    background-color: #D4F6CC;
+    height: 8vh;
+    width: 101vw;
+    padding-top: 10px;
+    padding-bottom: 5px;
+    padding-left: 50px;
+}
+#left_sidebar{
+    /*background-color: #5A8F7B;*/
     margin-top: 50px;
     width: 13vw;
-    height: auto;
+    height: 30vh;
+    /*border-right: 2px solid red;*/
     display: inline-block;
-    vertical-align: top;
 }
-
-#left_sidebar table {
-    width: 100%;
-    border-collapse: collapse;
-}
-
-#left_sidebar table tr {
+#left_sidebar table tr{
     background-color: #0096FF;
     color: white;
-    font-size: 1rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
+    font-size: 18;
 }
-
-#left_sidebar table tr:hover {
+#left_sidebar table tr:hover{
     background-color: #D4F6CC;
     color: black;
 }
-
-/* Logout Link */
-#logout_link {
+#logout_link{
     text-decoration: none;
     color: white;
-    padding: 8px 12px;
-    border-radius: 5px;
-    background-color: #0096FF;
-    transition: all 0.3s ease;
 }
-
-#logout_link:hover {
+#logout_link:hover{
     background-color: #D4F6CC;
     color: black;
 }
-
-/* Right Sidebar */
-#right_sidebar {
+#right_sidebar{
     padding: 35px;
-    height: auto;
+    height: 75vh;
     width: 75vw;
     display: inline-block;
-    vertical-align: top;
     color: white;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 10px;
-}
-
-/* Buttons (optional) */
-button {
-    padding: 10px 20px;
-    background-color: #0096FF;
-    border: none;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #D4F6CC;
-    color: black;
 }
