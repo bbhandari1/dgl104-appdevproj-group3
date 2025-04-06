@@ -4,7 +4,7 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
     include('includes/connection.php');
 
     // Create Task
-    if (isset($_POST['create_task'])) {
+    if (isset($_POST['create_task_teamlead'])) {
         $priority = intval($_POST['priority']);
         $query = "INSERT INTO tasks (tid, created_by, assigned_to, description, start_date, end_date, status, priority) 
                   VALUES s(null, ?, ?, ?, ?, ?, ?, ?)";

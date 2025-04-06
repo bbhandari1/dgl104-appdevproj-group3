@@ -1,5 +1,5 @@
 <?php
-include('../includes/connection.php');
+include('includes/connection.php');
 $users_query = "SELECT uid, name FROM users WHERE role = 'user'";
 $users_result = mysqli_query($connection, $users_query);
 ?>

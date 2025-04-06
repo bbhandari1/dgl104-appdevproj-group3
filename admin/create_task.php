@@ -43,7 +43,7 @@ if (isset($_POST['create_task']) && ($is_admin || $is_team_lead)) {
 									)";
         $result = mysqli_query($connection, $query);
         if ($result) {
-            		echo "<script>alert('Task created successfully.'); window.location.href = '../admin_dashboard.php';</script>";
+            		echo "<script>alert('Task created successfully.'); window.location.href = 'admin_dashboard.php';</script>";
         } else {
             echo "<script>alert('Error creating task: " . mysqli_error($connection) . "');</script>";
         }
