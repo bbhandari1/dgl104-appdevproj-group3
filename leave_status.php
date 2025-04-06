@@ -1,6 +1,11 @@
 <?php
-    session_start();    
-    if(isset($_SESSION['email'])){
+// Example of login session setting
+session_start();
+$_SESSION['uid'] = $user_id;  // set session for user ID after successful login
+$_SESSION['email'] = $user_email;  // set session for email
+
+
+if (isset($_SESSION['email']) && isset($_SESSION['uid'])) {
     include('includes/connection.php');
 ?>
 <html>
@@ -15,26 +20,32 @@
         </tr>
         <?php
             $sno = 1;  
-            $query = "select * from leaves where uid = $_SESSION[uid]";
-            $query_run = mysqli_query($connection,$query);
-            while($row = mysqli_fetch_assoc($query_run)){
-                ?>
+            // Sanitize and prepare the query
+            $uid = $_SESSION['uid'];
+            $query = "SELECT * FROM leaves WHERE uid = ?";
+            $stmt = mysqli_prepare($connection, $query);
+            mysqli_stmt_bind_param($stmt, "i", $uid);  // Bind the user ID to the query
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            while($row = mysqli_fetch_assoc($result)){
+        ?>
                 <tr>
                     <td><?php echo $sno; ?></td>
-                    <td><?php echo $row['subject']; ?></td>
-                    <td><?php echo $row['message']; ?></td>
-                    <td><?php echo $row['status']; ?></td>
+                    <td><?php echo htmlspecialchars($row['subject']); ?></td>
+                    <td><?php echo htmlspecialchars($row['message']); ?></td>
+                    <td><?php echo htmlspecialchars($row['status']); ?></td>
                 </tr>
-                <?php
-                $sno = $sno + 1;
+        <?php
+                $sno++;
             }
         ?>
     </table>
 </body>
 </html>
-<?php 
-}
-else{
-    header('Location:user_login.php');
+<?php
+} else {
+    header('Location:teamlead_dashboard.php');
+    exit();
 }
 ?>
