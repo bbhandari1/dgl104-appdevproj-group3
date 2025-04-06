@@ -53,7 +53,7 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
     <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/527a10858c.js" crossorigin="anonymous"></script>
     <script type="text/javascript">
         $(document).ready(function(){
