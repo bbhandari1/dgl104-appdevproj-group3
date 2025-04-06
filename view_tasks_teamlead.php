@@ -1,5 +1,5 @@
 <?php
-include('../includes/connection.php');
+include('includes/connection.php');
 $query = "SELECT t.*, u.name 
           FROM tasks t 
           LEFT JOIN users u ON t.assigned_to = u.uid 

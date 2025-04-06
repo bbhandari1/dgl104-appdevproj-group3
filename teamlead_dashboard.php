@@ -7,7 +7,7 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
     if (isset($_POST['create_task'])) {
         $priority = intval($_POST['priority']);
         $query = "INSERT INTO tasks (tid, created_by, assigned_to, description, start_date, end_date, status, priority) 
-                  VALUES (null, ?, ?, ?, ?, ?, ?, ?)";
+                  VALUES s(null, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = mysqli_prepare($connection, $query);
         $status = 'Not Started';
         mysqli_stmt_bind_param($stmt, "iissssi", $_SESSION['uid'], $_POST['assigned_user'], $_POST['description'], 
@@ -52,7 +52,7 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
     <title>Team Lead Dashboard</title>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.min.css">
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/527a10858c.js" crossorigin="anonymous"></script>
     <script type="text/javascript">

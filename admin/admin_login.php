@@ -11,8 +11,10 @@ if (isset($_POST['adminlogin'])) {
     if (mysqli_num_rows($query_run)) {
         $_SESSION['email'] = $email;
         $_SESSION['role'] = 'admin';
+
         while ($row = mysqli_fetch_assoc($query_run)) {
             $_SESSION['name'] = $row['name'];
+            $_SESSION['id'] = $row['id'];
         }
         echo "<script>window.location.href = 'admin_dashboard.php';</script>";
     } else {
