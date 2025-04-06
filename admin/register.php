@@ -1,4 +1,5 @@
 <?php
+
 session_start();
 
 // Enable error reporting for debugging
@@ -23,6 +24,7 @@ if (!$connection) {
 }
 
 if (isset($_POST['userRegistration'])) {
+
     // Debug: Show raw POST data
     echo "<pre>POST Data Received:\n";
     print_r($_POST['userRegistration']);
@@ -72,7 +74,7 @@ if (isset($_POST['userRegistration'])) {
     <div class="row">
         <div class="col-md-4 m-auto" id="register_home_page">
             <center><h3 style="background-color: #5A8F7B;padding: 5px;width: 20vw;">Admin - Add User/Team Lead</h3></center>
-            <form action="" method="post">
+            <form action="register.php" method="POST">
                 <div class="form-group">
                     <input type="text" class="form-control" name="name" placeholder="Enter Username" required>
                 </div>

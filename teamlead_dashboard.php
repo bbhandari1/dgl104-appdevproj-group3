@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
-    include('../includes/connection.php');
+    include('includes/connection.php');
 
     // Create Task
     if (isset($_POST['create_task'])) {
@@ -84,8 +84,8 @@ if (isset($_SESSION['email']) && $_SESSION['role'] === 'teamlead') {
         <div class="col-md-12">
             <h3><i class="fa fa-solid fa-list" style="padding-right: 15px;"></i> Task Management System</h3>
             <div style="text-align: right;">
-                <b>Email:</b> <?php echo $_SESSION['email']; ?>
-                <span style="margin-left:25px;"><b>Name:</b> <?php echo $_SESSION['name']; ?></span>
+                <b>Name:</b> <?php echo $_SESSION['name']; ?>
+                <span style="margin-left:25px;"><b>Role:</b> <?php echo $_SESSION['role']; ?></span>
             </div>
         </div>
     </div>

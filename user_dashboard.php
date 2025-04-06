@@ -1,25 +1,22 @@
 <?php
-    session_start();
-    if(isset($_SESSION['email'])){
+session_start();
+if (isset($_SESSION['email'])) {
     include('includes/connection.php');
-    if(isset($_POST['submit_leave'])){
-        $query = "insert into leaves values(null,$_SESSION[uid],'$_POST[subject]','$_POST[message]','No Action')";
-        $query_run = mysqli_query($connection,$query);
-        if($query_run){
-          echo "<script type='text/javascript'>
-              alert('Form submitted successfully....');
-            window.location.href = 'user_dashboard.php';  
-          </script>";
-        }
-        else{
-          echo "<script type='text/javascript'>
-              alert('Error...Plz try again.');
-              window.location.href = 'user_dashboard.php';
-          </script>";
+    if (isset($_POST['submit_leave'])) {
+        $query = "INSERT INTO leaves VALUES (null, $_SESSION[uid], '$_POST[subject]', '$_POST[message]', 'No Action')";
+        $query_run = mysqli_query($connection, $query);
+        if ($query_run) {
+            echo "<script type='text/javascript'>
+                alert('Form submitted successfully....');
+                window.location.href = 'user_dashboard.php';  
+            </script>";
+        } else {
+            echo "<script type='text/javascript'>
+                alert('Error...Plz try again.');
+                window.location.href = 'user_dashboard.php';
+            </script>";
         }
     }
-
-
 ?>
 <html>
     <head>
@@ -36,22 +33,21 @@
         <script type="text/javascript">
             $(document).ready(function(){
                 $("#manage_task").click(function(){
-                $("#right_sidebar").load("task.php");
+                    $("#right_sidebar").load("task.php");
                 });
             });
 
             $(document).ready(function(){
                 $("#apply_leave").click(function(){
-                $("#right_sidebar").load("leaveForm.php");
+                    $("#right_sidebar").load("leaveForm.php");
                 });
             });
 
             $(document).ready(function(){
                 $("#view_leave").click(function(){
-                $("#right_sidebar").load("leave_status.php");
+                    $("#right_sidebar").load("leave_status.php");
                 });
             });
-
         </script>
     </head>
     <body>
@@ -59,11 +55,11 @@
         <div class="row" id="header">
             <div class="col-md-12">
                 <div class="col-md-4" style="display: inline-block;">
-                    <h3><i class=" fa fa-solid fa-list" style="padding-right: 15px;"></i> Task Management System</h3>
+                    <h3><i class="fa fa-solid fa-list" style="padding-right: 15px;"></i> Task Management System</h3>
                 </div>
                 <div class="col-md-6" style="text-align: right;display: inline-block;">
-                    <b>Email: </b><?php echo $_SESSION['email']; ?>
-                    <span style="margin-left:25px;"><b>Name: </b><?php echo $_SESSION['name']; ?></span>
+                    <b>Name: </b><?php echo $_SESSION['name']; ?>
+                    <span style="margin-left:25px;"><b>Role: </b><?php echo $_SESSION['role']; ?></span>
                 </div>
             </div>
         </div>
@@ -91,8 +87,7 @@
     </body>
 </html>
 <?php 
+} else {
+    header('Location: user_login.php');
 }
-else{
-    header('Location:user_login.php');
-}
- ?>
+?>
