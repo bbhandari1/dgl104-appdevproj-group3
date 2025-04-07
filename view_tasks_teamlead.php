@@ -4,9 +4,6 @@ include('includes/connection.php');
 // Ensure session is active
 session_start();
 
-// Debug session UID
-echo "<p>Session UID: " . $_SESSION['uid'] . "</p>";  // REMOVE this after debugging
-
 // Prepare query to fetch tasks created by the team lead (using session UID)
 $query = "SELECT t.*, u.name 
           FROM tasks t 
