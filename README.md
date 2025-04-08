@@ -31,21 +31,30 @@ The TMS caters to small to medium-sized teams, offering:
    - Login and manage user accounts.
    - Create tasks with priority levels (Normal/Urgent).
    - View all tasks and user activities.
+  
+  ![Admin Dashboard](<Screenshot 2025-04-06 235449.png>)
 
-2. **Team Lead**
+1. **Team Lead**
    - Create and assign tasks to team members.
    - Monitor team tasks and update statuses.
    - Apply for leaves and check leave status.
+  
+  ![Teamlead Dashboard](<Screenshot (124).png>)
 
-3. **User**
+2. **User**
    - View and update assigned task statuses (Not Started, In Progress, Complete).
    - Apply for leaves and view leave statuses (No Action, Approved, Rejected).
+  
+  ![User dashboard](<Screenshot (123).png>)
 
 ### 2.2 Key Features
 - **Task Management**
   - Task creation with description, start/end dates, and priority.
   - Task status updates with validation.
   - Priority-based sorting and visual cues (e.g., red background for urgent tasks).
+
+![Task](<Screenshot 2025-04-06 235520.png>)
+
 - **Leave Management**
   - Leave request submission with subject and message.
   - Leave status tracking.
@@ -53,6 +62,8 @@ The TMS caters to small to medium-sized teams, offering:
   - Session-based authentication with role verification.
 - **Dynamic Dashboard**
   - AJAX-driven content loading using jQuery for seamless navigation.
+
+![Leave request](<Screenshot (120).png>)
 
 ---
 
@@ -159,16 +170,15 @@ The system uses a MySQL database (`tms_db`) with the following tables:
 
 ---
 
-## 7. Future Enhancements
-
-- **Task Filtering**: Add filters by status, date, or assignee.
-- **Notifications**: Email alerts for task deadlines or leave approvals.
-- **Leave Approval Workflow**: Admin interface to approve/reject leaves.
-- **User Profile Management**: Allow users to update personal details.
-- **Reporting**: Generate task completion and attendance reports.
+## 7. Debugging
+![alt text](Images/Debug1.jpeg)
+![alt text](Images/Debug2.jpeg)
 
 ---
 
 ## 8. Conclusion
 
 The Task Management System provides a robust foundation for managing tasks and leaves within a team. While functional, it can benefit from enhanced security measures and additional features to improve usability and scalability. This documentation serves as a guide for developers and stakeholders to understand, deploy, and extend the system.
+
+## Citation
+CSEtutorials. (2023, December 10). Task Management System Project in PHP and MySQL With Source Code || PHP Project ||  [Video]. YouTube. https://youtu.be/gVGaSIrFdfY

@@ -36,7 +36,7 @@ if (isset($_POST['userlogin'])) {
 <body>
     <div class="row">
         <div class="col-md-3 m-auto" id="login_home_page">
-            <center><h3 style="background-color: #5A8F7B;padding: 5px;width: 15vw;">User/Team Lead Login</h3></center>
+            <center><h3>User/Team Lead Login</h3></center>
             <form action="" method="post">
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" placeholder="Enter Email" required>

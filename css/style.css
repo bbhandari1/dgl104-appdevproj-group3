@@ -9,16 +9,15 @@ body{
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 25px;
-    height: 25vh;
+    height: 26vh;
     width: 50vw;
 }
 #login_home_page{
-    background-color: #81CACF;
     top: 25vh;
     padding-left: 50px;
     padding-right: 50px;
     padding-top: 25px;
-    height: 30vh;
+    height: 55vh;
     width: 50vw;
 }
 #register_home_page{

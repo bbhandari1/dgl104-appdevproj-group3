@@ -70,22 +70,24 @@ if (isset($_POST['submit_leave'])) {
 <body>
     <div class="row" id="header">
         <div class="col-md-12">
-            <h3><i class="fa fa-solid fa-list" style="padding-right: 15px;"></i> Task Management System</h3>
-            <div style="text-align: right;">
+        <div class="col-md-4" style="display: inline-block;">
+            <h3>Task Management System</h3>
+            </div>
+        <div class="col-md-6" style="text-align: right; display: inline-block;">
                 <b>Name:</b> <?php echo htmlspecialchars($_SESSION['name']); ?>
                 <span style="margin-left:25px;"><b>Role:</b> <?php echo htmlspecialchars($_SESSION['role']); ?></span>
             </div>
         </div>
     </div>
-    
+
     <div class="row">
         <div id="left_sidebar" class="col-md-2">
-            <table class="table">
-                <tr><td style="text-align: center;"><a href="#" id="create_task">Create Task</a></td></tr>
-                <tr><td style="text-align: center;"><a href="#" id="view_tasks">Team Tasks</a></td></tr>
-                <tr><td style="text-align: center;"><a href="#" id="assigned_tasks">My Assigned Tasks</a></td></tr>
-                <tr><td style="text-align: center;"><a href="#" id="apply_leave">Apply Leave</a></td></tr>
-                <tr><td style="text-align: center;"><a href="#" id="view_leave">Leave Status</a></td></tr>
+            <table class="table" style="width:100%;">
+                <tr><td style="text-align: center;"><a href="create_task.php" id="create_task">Create Task</a></td></tr>
+                <tr><td style="text-align: center;"><a href="view_tasks_teamlead.php" id="view_tasks">Team Tasks</a></td></tr>
+                <tr><td style="text-align: center;"><a href="assigned_task_teamlead.php" id="assigned_tasks">My Assigned Tasks</a></td></tr>
+                <tr><td style="text-align: center;"><a href="leaveForm.php" id="apply_leave">Apply Leave</a></td></tr>
+                <tr><td style="text-align: center;"><a href="view_leave.php" id="view_leave">Leave Status</a></td></tr>
                 <tr><td style="text-align: center;"><a href="logout.php">Logout</a></td></tr>
             </table>
         </div>
