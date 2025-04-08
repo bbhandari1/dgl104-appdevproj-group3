@@ -111,6 +111,15 @@ The system uses a MySQL database (`tms_db`) with the following tables:
   - `style.css`: Custom styles.
 - **Bootstrap**: External CSS/JS files for styling and functionality.
 
+### 3.4 Access Control & Authentication Logic
+
+The system uses session-based authentication and role-based access control to manage users securely:
+
+- `session_start()` is used in all protected pages.
+- `$_SESSION['role']` is used to redirect users based on their assigned roles.
+- Admin, Team Lead, and User dashboards are accessible only after login validation.
+
+
 ---
 
 ## 4. System Workflow
